@@ -1,0 +1,261 @@
+*ghostty-default-style-dark.txt*                                          GhosttyDefaultStyleDark theme for Neovim
+
+==============================================================================
+Table of Contents                                *ghostty-default-style-dark-table-of-contents*
+
+1. 🖌️ ghostty-default-style-dark.nvim                             |ghostty-default-style-dark-🖌️-ghostty-default-style-dark.nvim|
+  - ✨ Features                    |ghostty-default-style-dark-🖌️-ghostty-default-style-dark.nvim-✨-features|
+  - ⚡️ Requirements      |ghostty-default-style-dark-🖌️-ghostty-default-style-dark.nvim-⚡️-requirements|
+  - 📦 Installation          |ghostty-default-style-dark-🖌️-ghostty-default-style-dark.nvim-📦-installation|
+  - 🚀 Usage                        |ghostty-default-style-dark-🖌️-ghostty-default-style-dark.nvim-🚀-usage|
+  - ⚙️ Configuration    |ghostty-default-style-dark-🖌️-ghostty-default-style-dark.nvim-⚙️-configuration|
+  - 🤝 Integrations          |ghostty-default-style-dark-🖌️-ghostty-default-style-dark.nvim-🤝-integrations|
+  - 🎉 Credits                    |ghostty-default-style-dark-🖌️-ghostty-default-style-dark.nvim-🎉-credits|
+2. Links                                                     |ghostty-default-style-dark-links|
+
+==============================================================================
+1. 🖌️ ghostty-default-style-dark.nvim                             *ghostty-default-style-dark-🖌️-ghostty-default-style-dark.nvim*
+
+Neovim theme using the GhosttyDefaultStyleDark palette <https://www.ghostty-default-style-darktheme.com/> that tries to
+be as close as possible to the official vim theme
+<https://github.com/arcticicestudio/ghostty-default-style-dark-vim/> and the official vscode theme
+<https://github.com/arcticicestudio/ghostty-default-style-dark-visual-studio-code>.
+
+
+  "Arctic, north-bluish clean and elegant" - arcticicestudio
+
+
+
+✨ FEATURES                        *ghostty-default-style-dark-🖌️-ghostty-default-style-dark.nvim-✨-features*
+
+- supports TreeSitter and LSP
+- vim terminal colors
+- **lualine** theme
+
+
+PLUGIN SUPPORT ~
+
+- TreeSitter <https://github.com/nvim-treesitter/nvim-treesitter>
+- |LSP Diagnostics|
+- LSP Trouble <https://github.com/folke/lsp-trouble.nvim>
+- Git Graph <https://github.com/isakbm/gitgraph.nvim>
+- Git Signs <https://github.com/lewis6991/gitsigns.nvim>
+- Git Gutter <https://github.com/airblade/vim-gitgutter>
+- Telescope <https://github.com/nvim-telescope/telescope.nvim>
+- NvimTree <https://github.com/kyazdani42/nvim-tree.lua>
+- NeoTree <https://github.com/nvim-neo-tree/neo-tree.nvim>
+- WhichKey <https://github.com/liuchengxu/vim-which-key>
+- Lualine <https://github.com/hoob3rt/lualine.nvim>
+- Leap <https://github.com/ggandor/leap.nvim>
+- Barbar <https://github.com/romgrk/barbar.nvim>
+- Bufferline <https://github.com/akinsho/bufferline.nvim>
+- Cmp <https://github.com/hrsh7th/nvim-cmp/>
+- Navic <https://github.com/SmiteshP/nvim-navic>
+- Aerial <https://github.com/stevearc/aerial.nvim>
+- Notify <https://github.com/rcarriga/nvim-notify>
+- RainbowDelimiter <https://github.com/HiPhish/rainbow-delimiters.nvim>
+- Neogit <https://github.com/NeogitOrg/neogit>
+- highlight-undo.nvim <https://github.com/tzachar/highlight-undo.nvim>
+- Illuminate <https://github.com/RRethy/vim-illuminate>
+- Codeium <https://github.com/Exafunction/codeium.vim>
+- Flash.nvim <https://github.com/folke/flash.nvim>
+- Glance <https://github.com/dnlhc/glance.nvim>
+- Markview <https://github.com/OXY2DEV/markview.nvim>
+- Toggleterm <https://github.com/akinsho/toggleterm.nvim>
+- Blink.cmp <https://github.com/saghen/blink.cmp>
+- fzf-lua <https://github.com/ibhagwan/fzf-lua>
+
+Your preferred plugin is missing ? Open an issue or, even better, open a pull
+request 😉.
+
+
+⚡️ REQUIREMENTS          *ghostty-default-style-dark-🖌️-ghostty-default-style-dark.nvim-⚡️-requirements*
+
+- Neovim >= 0.8.0
+
+
+📦 INSTALLATION              *ghostty-default-style-dark-🖌️-ghostty-default-style-dark.nvim-📦-installation*
+
+Install the theme with your preferred package manager:
+
+lazy <https://github.com/folke/lazy.nvim>
+
+>lua
+    require("lazy").setup({
+      {
+        "gbprod/ghostty-default-style-dark.nvim",
+        lazy = false,
+        priority = 1000,
+        config = function()
+          require("ghostty-default-style-dark").setup({})
+          vim.cmd.colorscheme("ghostty-default-style-dark")
+        end,
+      },
+      install = {
+        colorscheme = { "ghostty-default-style-dark" },
+      },
+    });
+<
+
+
+🚀 USAGE                            *ghostty-default-style-dark-🖌️-ghostty-default-style-dark.nvim-🚀-usage*
+
+Enable the colorscheme:
+
+>vim
+    " Vim Script
+    colorscheme ghostty-default-style-dark
+<
+
+>lua
+    -- Lua
+    vim.cmd.colorscheme("ghostty-default-style-dark")
+<
+
+
+⚙️ CONFIGURATION        *ghostty-default-style-dark-🖌️-ghostty-default-style-dark.nvim-⚙️-configuration*
+
+
+  ❗️ configuration needs to be set **BEFORE** loading the color scheme with
+  `colorscheme ghostty-default-style-dark`
+GhosttyDefaultStyleDark.nvim will use the default options, unless you call `setup`.
+
+>lua
+    require("ghostty-default-style-dark").setup({
+      -- your configuration comes here
+      -- or leave it empty to use the default settings
+      transparent = false, -- Enable this to disable setting the background color
+      terminal_colors = true, -- Configure the colors used when opening a `:terminal` in Neovim
+      diff = { mode = "bg" }, -- enables/disables colorful backgrounds when used in diff mode. values : [bg|fg]
+      borders = true, -- Enable the border between verticaly split windows visible
+      errors = { mode = "bg" }, -- Display mode for errors and diagnostics
+                                -- values : [bg|fg|none]
+      search = { theme = "vim" }, -- theme for highlighting search results
+                                  -- values : [vim|vscode]
+      styles = {
+        -- Style to be applied to different syntax groups
+        -- Value is any valid attr-list value for `:help nvim_set_hl`
+        comments = { italic = true },
+        keywords = {},
+        functions = {},
+        variables = {},
+    
+        -- To customize lualine/bufferline
+        bufferline = {
+          current = {},
+          modified = { italic = true },
+        },
+    
+        lualine_bold = false, -- When `true`, section headers in the lualine theme will be bold
+      },
+    
+      -- colorblind mode
+      -- see https://github.com/EdenEast/nightfox.nvim#colorblind
+      -- simulation mode has not been implemented yet.
+      colorblind = {
+        enable = false,
+        preserve_background = false,
+        severity = {
+          protan = 0.0,
+          deutan = 0.0,
+          tritan = 0.0,
+        },
+      },
+    
+      -- Override the default colors
+      ---@param colors GhosttyDefaultStyleDark.Palette
+      on_colors = function(colors) end,
+    
+      --- You can override specific highlights to use other groups or a hex color
+      --- function will be called with all highlights and the colorScheme table
+      ---@param colors GhosttyDefaultStyleDark.Palette
+      on_highlights = function(highlights, colors) end,
+    })
+<
+
+
+🤝 INTEGRATIONS              *ghostty-default-style-dark-🖌️-ghostty-default-style-dark.nvim-🤝-integrations*
+
+nvim-lualine/lualine.nvim ~
+
+To enable the `ghostty-default-style-dark` theme for `Lualine`, simply specify it in your lualine
+settings:
+
+>lua
+    require('lualine').setup {
+      options = {
+        -- ... your lualine config
+        theme = 'ghostty-default-style-dark'
+        -- ... your lualine config
+      }
+    }
+<
+
+dnlhc/glance.nvim ~
+
+GhosttyDefaultStyleDark provide default options for `glance.nvim` to have a better integration:
+
+>lua
+    require("lazy").setup({
+        {
+          "dnlhc/glance.nvim",
+          opts = require("ghostty-default-style-dark.plugins.glance").make_opts({
+            folds = {
+              folded = false,
+            },
+          }),
+        }
+      }
+    )
+<
+
+akinsho/bufferline.nvim ~
+
+To use this theme for `bufferline`, add this to your config:
+
+>lua
+    require("bufferline").setup({
+        options = {
+            separator_style = "thin",
+        },
+        highlights = require("ghostty-default-style-dark.plugins.bufferline").akinsho(),
+    })
+<
+
+akinsho/toggleterm.nvim ~
+
+GhosttyDefaultStyleDark provide default options for `toggleterm.nvim` to have a better
+integration:
+
+>lua
+    require("toggleterm").setup(
+        require("ghostty-default-style-dark.plugins.toggleterm").make_opts({
+          -- your custom options
+        })
+    )
+<
+
+
+🎉 CREDITS                        *ghostty-default-style-dark-🖌️-ghostty-default-style-dark.nvim-🎉-credits*
+
+- shaunsingh/ghostty-default-style-dark.nvim <https://github.com/shaunsingh/ghostty-default-style-dark.nvim>: pretty good
+    GhosttyDefaultStyleDark theme for Neovim but too far from original and requires too much
+    customisation for me.
+- arcticicestudio/ghostty-default-style-dark-visual-studio-code <https://github.com/arcticicestudio/ghostty-default-style-dark-visual-studio-code>: For color picking
+- arcticicestudio/ghostty-default-style-dark-vim <https://github.com/arcticicestudio/ghostty-default-style-dark-vim>: For
+    his years of good and loyal service.
+- folke/tokyonight.nvim <https://github.com/folke/tokyonight.nvim>: For a lot
+    of code inspiration.
+- EdenEast/nightfox.nvim <https://github.com/EdenEast/nightfox.nvim#colorblind>: For daltonization algorithm
+
+==============================================================================
+2. Links                                                     *ghostty-default-style-dark-links*
+
+1. *2022-12-01-142011_1277x703_scrot*: https://user-images.githubusercontent.com/3751019/205092735-ced8ba05-d15d-4751-9a88-17cefef5ec52.png
+2. *2022-12-01-142157_1270x700_scrot*: https://user-images.githubusercontent.com/3751019/205092727-a266d2c8-35fd-4272-b90f-c1f063591e58.png
+3. *2022-12-01-142111_1276x700_scrot*: https://user-images.githubusercontent.com/3751019/205092730-9874369f-d045-47c6-8b07-5371cf344223.png
+4. *2022-12-01-142044_1265x634_scrot*: https://user-images.githubusercontent.com/3751019/205092733-3aebea83-c5a8-4e96-ab2e-a4646cc9e3ea.png
+
+Generated by panvimdoc <https://github.com/kdheepak/panvimdoc>
+
+vim:tw=78:ts=8:noet:ft=help:norl:

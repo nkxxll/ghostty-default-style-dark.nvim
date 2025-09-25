@@ -1,0 +1,1 @@
+require("ghostty-default-style-dark").load()
