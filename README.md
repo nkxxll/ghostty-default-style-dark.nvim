@@ -10,6 +10,8 @@
 
 Neovim theme using the ghostty-default-style-dark palette.
 
+![Ocaml code Screenshot](./screenshots/screenshot1.png)
+
 ## ✨ Features
 
 - supports TreeSitter and LSP
