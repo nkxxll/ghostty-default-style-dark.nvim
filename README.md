@@ -66,7 +66,7 @@ Install the theme with your preferred package manager:
 ```lua
 require("lazy").setup({
   {
-    "gbprod/ghostty-default-style-dark.nvim",
+    "nkxxll/ghostty-default-style-dark.nvim",
     lazy = false,
     priority = 1000,
     config = function()
