@@ -37,7 +37,7 @@ local defaults = {
   polar_night = {
     origin = "#282c34", -- bg
     bright = "#1d1f21", -- p0
-    brighter = "#666666", -- p8
+    brighter = "#555555", -- p8 (darker)
     brightest = "#666666", -- p8
     light = "#c4c8c6", -- p7
   },
@@ -48,16 +48,16 @@ local defaults = {
   },
   frost = {
     polar_water = "#8abeb7", -- p6
-    ice = "#82a2be", -- p4
-    artic_water = "#7aa6da", -- p12
+    ice = "#7aa6da", -- p12
+    artic_water = "#82a2be", -- p4
     artic_ocean = "#82a2be", -- p4
   },
   aurora = {
-    red = "#cc6566", -- p1
-    orange = "#d54e53", -- p9
-    yellow = "#f0c674", -- p3
-    green = "#b6bd68", -- p2
-    purple = "#b294bb", -- p5
+    red = "#d54e53", -- p9
+    orange = "#cc6566", -- p1
+    yellow = "#e7c547", -- p11
+    green = "#b9ca4b", -- p10
+    purple = "#c397d8", -- p13
   },
   none = "NONE",
 }

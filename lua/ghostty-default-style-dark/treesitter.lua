@@ -18,7 +18,7 @@ function treesitter.highlights()
     ["@operator"] = { fg = c.frost.artic_water }, --  symbolic operators (e.g. `+` / `*`)
 
     -- Punctuation
-    ["@punctuation.delimiter"] = { fg = c.snow_storm.brightest }, --  delimiters (e.g. `;` / `.` / `,`)
+    ["@punctuation.delimiter"] = { fg = c.snow_storm.origin }, --  delimiters (e.g. `;` / `.` / `,`)
     ["@punctuation.bracket"] = { fg = c.frost.ice }, --  brackets (e.g. `()` / `{}` / `[]`)
     ["@markup.list"] = { fg = c.frost.artic_water }, --  special symbols (e.g. `{}` in string interpolation)
     ["@punctuation.special"] = { link = "@markup.list" }, -- @deprecated
@@ -80,14 +80,14 @@ function treesitter.highlights()
     ["@property"] = { fg = c.snow_storm.origin }, --  similar to `@field`
 
     -- Identifiers
-    ["@variable"] = vim.tbl_extend("force", { fg = c.snow_storm.origin }, options.styles.variables), --  various variable names
+    ["@variable"] = vim.tbl_extend("force", { fg = c.snow_storm.brightest }, options.styles.variables), --  various variable names
     ["@variable.builtin"] = { fg = c.frost.artic_water }, --  built-in variable names (e.g. `this`)
-    ["@constant"] = { fg = c.snow_storm.origin }, --  constant identifiers
+    ["@constant"] = { fg = c.snow_storm.brightest }, --  constant identifiers
     ["@constant.builtin"] = { fg = c.frost.artic_water }, --  built-in constant values
     ["@constant.macro"] = { fg = c.frost.artic_water }, --  constants defined by the preprocessor
-    ["@module"] = { fg = c.snow_storm.origin }, --  modules or namespaces
+    ["@module"] = { fg = c.snow_storm.brightest }, --  modules or namespaces
     ["@namespace"] = { link = "@module" }, -- @deprecated
-    ["@string.special.symbol"] = { fg = c.snow_storm.origin }, --  symbols or atoms
+    ["@string.special.symbol"] = { fg = c.snow_storm.brightest }, --  symbols or atoms
     ["@symbol"] = { link = "@string.special.symbol" }, -- @deprecated
 
     -- Text
