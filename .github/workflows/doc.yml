@@ -13,8 +13,8 @@ jobs:
       - name: panvimdoc
         uses: kdheepak/panvimdoc@main
         with:
-          vimdoc: nord-nvim
-          description: Nord theme for Neovim
+          vimdoc: ghostty-default-style-dark-nvim
+          description: Ghostty Default Style Dark theme for Neovim
           version: 'NVIM v0.8.0'
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:

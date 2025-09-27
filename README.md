@@ -1,12 +1,8 @@
 # 🖌️ ghostty-default-style-dark.nvim
 
 > [!IMPORTANT]
-> This work is totally based of gbprod/nord.nvim theme and I want no credit for it, leave the love
+> This work is totally based of folke/tokyonight.nvim theme and I want no credit for it, leave the love
 > for her/him!
-
-> [!WARNING]
-> This is personal software I will be happy to merge pull requests, but keep in mind that I do this
-> on my own time and there are no guarantees.
 
 Neovim theme using the ghostty-default-style-dark palette.
 
@@ -50,7 +46,7 @@ Neovim theme using the ghostty-default-style-dark palette.
 - [Blink.cmp](https://github.com/saghen/blink.cmp)
 - [fzf-lua](https://github.com/ibhagwan/fzf-lua)
 
-Your preferred plugin is missing ? Open an issue or, even better, open a pull
+Your preferred plugin is missing? Open an issue or, even better, open a pull
 request 😉.
 
 ## ⚡️ Requirements
@@ -64,20 +60,14 @@ Install the theme with your preferred package manager:
 [lazy](https://github.com/folke/lazy.nvim)
 
 ```lua
-require("lazy").setup({
-  {
-    "nkxxll/ghostty-default-style-dark.nvim",
-    lazy = false,
-    priority = 1000,
-    config = function()
-      require("ghostty-default-style-dark").setup({})
-      vim.cmd.colorscheme("ghostty-default-style-dark")
-    end,
-  },
-  install = {
-    colorscheme = { "ghostty-default-style-dark" },
-  },
-});
+{
+  "nkxxll/ghostty-default-style-dark.nvim",
+  lazy = false,
+  priority = 1000,
+  opts = function()
+    return require("ghostty-default-style-dark.config").options
+  end,
+}
 ```
 
 ## 🚀 Usage
@@ -107,49 +97,29 @@ require("ghostty-default-style-dark").setup({
   -- or leave it empty to use the default settings
   transparent = false, -- Enable this to disable setting the background color
   terminal_colors = true, -- Configure the colors used when opening a `:terminal` in Neovim
-  diff = { mode = "bg" }, -- enables/disables colorful backgrounds when used in diff mode. values : [bg|fg]
-  borders = true, -- Enable the border between verticaly split windows visible
-  errors = { mode = "bg" }, -- Display mode for errors and diagnostics
-                            -- values : [bg|fg|none]
-  search = { theme = "vim" }, -- theme for highlighting search results
-                              -- values : [vim|vscode]
   styles = {
     -- Style to be applied to different syntax groups
     -- Value is any valid attr-list value for `:help nvim_set_hl`
     comments = { italic = true },
-    keywords = {},
+    keywords = { italic = true },
     functions = {},
     variables = {},
-
-    -- To customize lualine/bufferline
-    bufferline = {
-      current = {},
-      modified = { italic = true },
-    },
-
-    lualine_bold = false, -- When `true`, section headers in the lualine theme will be bold
+    -- Background styles. Can be "dark", "transparent" or "normal"
+    sidebars = "dark", -- style for sidebars, see below
+    floats = "dark", -- style for floating windows
   },
+  dim_inactive = false, -- dims inactive windows
+  lualine_bold = false, -- When `true`, section headers in the lualine theme will be bold
 
-  -- colorblind mode
-  -- see https://github.com/EdenEast/nightfox.nvim#colorblind
-  -- simulation mode has not been implemented yet.
-  colorblind = {
-    enable = false,
-    preserve_background = false,
-    severity = {
-      protan = 0.0,
-      deutan = 0.0,
-      tritan = 0.0,
-    },
-  },
-
-  -- Override the default colors
-  ---@param colors ghostty-default-style-dark.Palette
+  --- You can override specific color groups to use other groups or a hex color
+  --- function will be called with a ColorScheme table
+  ---@param colors ColorScheme
   on_colors = function(colors) end,
 
   --- You can override specific highlights to use other groups or a hex color
-  --- function will be called with all highlights and the colorScheme table
-  ---@param colors ghostty-default-style-dark.Palette
+  --- function will be called with a Highlights and ColorScheme table
+  ---@param highlights Highlights
+  ---@param colors ColorScheme
   on_highlights = function(highlights, colors) end,
 })
 ```
@@ -222,15 +192,10 @@ require("toggleterm").setup(
 
 </details>
 
-## TODOs
+## Credit
 
-- [ ] caching https://github.com/gbprod/nord.nvim/pull/86/files
+- folke/tokyonight.nvim: for the code base.
 
-## Credit (all the credits from gbprod)
+## Todo
 
-- gbprod/nord.nvim: made this repo and the code.
-- shaunsingh/nord.nvim: pretty good Nord theme for Neovim but too far from original and requires too much customisation for me.
-- arcticicestudio/nord-visual-studio-code: For color picking
-- arcticicestudio/nord-vim: For his years of good and loyal service.
-- folke/tokyonight.nvim: For a lot of code inspiration.
-- EdenEast/nightfox.nvim: For daltonization algorithm
+- [ ] update the readme the readme is not up to date with the features that I stole from folke
