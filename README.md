@@ -64,9 +64,10 @@ Install the theme with your preferred package manager:
   "nkxxll/ghostty-default-style-dark.nvim",
   lazy = false,
   priority = 1000,
-  opts = function()
-    return require("ghostty-default-style-dark.config").options
-  end,
+  config = function()
+    require("ghostty-default-style-dark").setup({})
+    vim.cmd.colorscheme("ghostty-default-style-dark")
+  end
 }
 ```
 
