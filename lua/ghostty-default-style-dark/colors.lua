@@ -10,45 +10,45 @@ function M.setup(opts)
 
   ---@type Palette
   local palette = {
-      -- Mapped from ghostty-default-style-dark
-      bg = "#282c34",
-      fg = "#ffffff",
-      red = "#cc6566",
-      green = "#b6bd68",
-      yellow = "#f0c674",
-      blue = "#82a2be",
-      magenta = "#b294bb",
-      cyan = "#8abeb7",
-      fg_dark = "#c4c8c6",
+    -- Mapped from ghostty-default-style-dark
+    bg = "#282c34",
+    fg = "#ffffff",
+    red = "#cc6566",
+    green = "#b6bd68",
+    yellow = "#f0c674",
+    blue = "#82a2be",
+    magenta = "#b294bb",
+    cyan = "#8abeb7",
+    fg_dark = "#c4c8c6",
 
-      bg_dark = "#1d1f21",
-      bg_dark1 = "#1d1f21",
+    bg_dark = "#1d1f21",
+    bg_dark1 = "#1d1f21",
 
-      bg_highlight = "#353a44",
-      blue0 = "#7aa6da", -- bright blue
-      blue1 = "#70c0b1", -- bright cyan
-      blue2 = "#82a2be", -- blue
-      blue5 = "#8abeb7", -- cyan
-      blue6 = "#70c0b1", -- bright cyan again
-      blue7 = Util.blend("#82a2be", 0.5, "#282c34"),
-      comment = "#666666", -- bright black from ghostty
-      dark3 = "#666666", -- bright black
-      dark5 = "#c4c8c6", -- white
-      fg_gutter = "#666666", -- bright black
-      green1 = "#b9ca4b", -- bright green
-      green2 = "#b6bd68", -- green
-      magenta2 = "#c397d8", -- bright magenta
-      orange = "#f0c674", -- yellow, tokyonight uses orange for some yellows
-      purple = "#b294bb", -- magenta
-      red1 = "#d54e53", -- bright red
-      teal = "#8abeb7", -- cyan
-      terminal_black = "#1d1f21",
+    bg_highlight = "#353a44",
+    blue0 = "#7aa6da", -- bright blue
+    blue1 = "#70c0b1", -- bright cyan
+    blue2 = "#82a2be", -- blue
+    blue5 = "#8abeb7", -- cyan
+    blue6 = "#70c0b1", -- bright cyan again
+    blue7 = Util.blend("#82a2be", 0.5, "#282c34"),
+    comment = "#666666", -- bright black from ghostty
+    dark3 = "#666666", -- bright black
+    dark5 = "#c4c8c6", -- white
+    fg_gutter = "#666666", -- bright black
+    green1 = "#b9ca4b", -- bright green
+    green2 = "#b6bd68", -- green
+    magenta2 = "#c397d8", -- bright magenta
+    orange = "#f0c674", -- yellow, tokyonight uses orange for some yellows
+    purple = "#b294bb", -- magenta
+    red1 = "#d54e53", -- bright red
+    teal = "#8abeb7", -- cyan
+    terminal_black = "#1d1f21",
 
-      git = {
-        add = "#b9ca4b", -- bright green
-        change = "#7aa6da", -- bright blue
-        delete = "#d54e53", -- bright red
-      },
+    git = {
+      add = "#b9ca4b", -- bright green
+      change = "#7aa6da", -- bright blue
+      delete = "#d54e53", -- bright red
+    },
   }
 
   -- Color Palette

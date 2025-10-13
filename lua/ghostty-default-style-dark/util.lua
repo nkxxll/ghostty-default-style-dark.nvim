@@ -161,7 +161,6 @@ function M.cache.write(key, data)
   pcall(M.write, M.cache.file(key), vim.json.encode(data))
 end
 
-function M.cache.clear()
-end
+function M.cache.clear() end
 
 return M
